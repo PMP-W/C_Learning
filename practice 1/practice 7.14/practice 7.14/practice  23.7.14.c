@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
-#define NAME "w"//²»ÓÃ¼Ó·ÖºÅ
+#define NAME "w"//ä¸ç”¨åŠ åˆ†å·
 #define ADDRESS "China"
 int main()
 {
@@ -8,25 +8,25 @@ int main()
 	printf("%s\n", ADDRESS);
 	return 0;
 }
-
+-----------------------------------------------------
 #define Days_Year 365
 int main()
 {
 	/*int age = 18;
 	int day;
 	day = age * Days_Year;
-	printf("ÎÒ½ñÄê%dËê£¬¼´%dÌì", age, day);
+	printf("æˆ‘ä»Šå¹´%då²ï¼Œå³%då¤©", age, day);
 	return 0;*/
 	int age, day;
 	age = 0;
-	printf("Äã½ñÄê¶àÉÙËêÁË£¿\n");
+	printf("ä½ ä»Šå¹´å¤šå°‘å²äº†ï¼Ÿ\n");
 	scanf("%d", &age);
 	day = age * Days_Year;
-	printf("ÎÒ½ñÄê%dËê£¬¼´%dÌì\n", age, day);
+	printf("æˆ‘ä»Šå¹´%då²ï¼Œå³%då¤©\n", age, day);
 	return 0;
 }
-
-int jolly();//Òª¼Ó·ÖºÅ
+--------------------------------------------------------
+int jolly();//è¦åŠ åˆ†å·
 int dengy();
 int main()
 {
@@ -46,7 +46,7 @@ int deny()
 	printf("Which nobody can deny!\n");
 	return 0;
 }
-
+----------------------------------------------------------------
 
 int sm();
 int main()
@@ -63,7 +63,7 @@ int sm()
 	printf("Smile!");
 	return 0;
 }
-
+---------------------------------------------
 int one_three();
 int main()
 {
