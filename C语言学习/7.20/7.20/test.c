@@ -3,9 +3,9 @@
 int main()
 {
 	int num = 0;
-	printf("你多少岁了？\n");
+	printf("耍\n");
 	scanf("%d", &num);
 	if (num = 18)
-		printf("太棒了！\n");
+		printf("太澶浜嗭紒\n");
 	return 0;
 }
