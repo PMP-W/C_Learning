@@ -1,57 +1,54 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<limits.h>
-//int main()
-//{
-//	int num = 1;
-//	int temperature = -30;//ÓĞĞ©±äÁ¿ÓĞÕı¸º£¬ÓĞĞ©Ö»ÓĞÕı
-//
-//	unsigned short age = INT_MIN;//ĞèÒªÒıÍ·ÎÄ¼ş
-//	return 0;
-//}
+int main()
+{
+	int num = 1;
+	int temperature = -30;//æœ‰äº›å˜é‡æœ‰æ­£è´Ÿï¼Œæœ‰äº›åªæœ‰æ­£
+
+	unsigned short age = INT_MIN;//éœ€è¦å¼•å¤´æ–‡ä»¶
+	return 0;
+}
+
+--------------------------------------------------------
+//size_tæ˜¯ä¸“é—¨ä¸ºsizeofè®¾ç½®çš„ä¸€ä¸ªç±»å‹
+//size_tçš„æœ¬è´¨æ˜¯unsigned int
+//size_tç±»å‹çš„æ•°æ®åœ¨æ‰“å°çš„æ—¶å€™ï¼Œæ ¼å¼åº”è¯¥ä½¿ç”¨%zd
+int main()
+{
+	size_t num = 1;
+	printf("%zd\n", sizeof(char));//sizeofæ˜¯ä¸€ä¸ªæ“ä½œç¬¦ï¼Œè®¡ç®—çš„æ˜¯å˜é‡æ‰€å å†…å­˜çš„å¤§å°ï¼Œå•ä½æ˜¯å­—èŠ‚
+	printf("%zd\n", sizeof(int));
+	printf("%zd\n", sizeof(short));
+	printf("%zd\n", sizeof(long));
+	printf("%zd\n", sizeof(long long));
+	printf("%zd\n", sizeof(float));
+    printf("%zd\n", sizeof(double));
 
 
-//size_tÊÇ×¨ÃÅÎªsizeofÉèÖÃµÄÒ»¸öÀàĞÍ
-//size_tµÄ±¾ÖÊÊÇunsigned int
-//size_tÀàĞÍµÄÊı¾İÔÚ´òÓ¡µÄÊ±ºò£¬¸ñÊ½Ó¦¸ÃÊ¹ÓÃ%zd
-//int main()
-//{
-//	size_t num = 1;
-//	printf("%zd\n", sizeof(char));//sizeofÊÇÒ»¸ö²Ù×÷·û£¬¼ÆËãµÄÊÇ±äÁ¿ËùÕ¼ÄÚ´æµÄ´óĞ¡£¬µ¥Î»ÊÇ×Ö½Ú
-//	printf("%zd\n", sizeof(int));
-//	printf("%zd\n", sizeof(short));
-//	printf("%zd\n", sizeof(long));
-//	printf("%zd\n", sizeof(long long));
-//	printf("%zd\n", sizeof(float));
-//	printf("%zd\n", sizeof(double));
-//
-//
-//
-//	return 0;
-//}
 
-//int main()
-//{
-//	int a = 10;
+	return 0;
+}
+-------------------
+int main()
+{
+	int a = 10;
 //	//a = a + 1;
 //	//a += 1;
 //	//a++;
-//	++a;
-//	printf("a=%d", a);
-//	return 0;
-//}
-
-//Ç°ÖÃ++£¬ºóÖÃ++
-//int main()
-//{
-//	int a = 5;
-//	//int b = ++a;//Ç°ÖÃ++£ºÏÈ++£¬ºóÊ¹ÓÃ        a=a+1,b=a
-//	int b = a++;//ºóÖÃ++£ºÏÈÊ¹ÓÃ£¬ºó++        b=a,a=a+1
-//	printf("a=%d\n", a);//6
-//	printf("b=%d\n", b);//6      5
-//
-//	return 0;
-//}
+	++a;
+	printf("a=%d", a);
+	return 0;
+}
+--------------------------------------------------
+//å‰ç½®++ï¼Œåç½®++
+int main()
+{
+	int a = 5;
+	int b = ++a;//å‰ç½®++ï¼šå…ˆ++ï¼Œåä½¿ç”¨        a=a+1,b=a/	int b = a++;//åç½®++ï¼šå…ˆä½¿ç”¨ï¼Œå++        b=a,a=a+1
+	printf("a=%d\n", a);//6/	printf("b=%d\n", b);//6      5/
+    	return 0;
+}
 // 
 // 
 // 
@@ -74,7 +71,7 @@
 
 
 
-//ÅĞ¶ÏÒ»¸öÊıÊÇ·ñÎªÆæÊı
+//åˆ¤æ–­ä¸€ä¸ªæ•°æ˜¯å¦ä¸ºå¥‡æ•°
 
 
 //
@@ -82,19 +79,19 @@
 //{
 //	int a = 0;
 //
-//	printf("ÇëÊäÈëÒ»¸öÊı£º");
+//	printf("è¯·è¾“å…¥ä¸€ä¸ªæ•°ï¼š");
 //		scanf_s("%d", &a);
 //	if (a % 2 == 0)
-//		printf("Õâ¸öÊıÊÇÅ¼Êı\n");
+//		printf("è¿™ä¸ªæ•°æ˜¯å¶æ•°\n");
 //	else
-//		printf("Õâ¸öÊıÊÇÆæÊı");
+//		printf("è¿™ä¸ªæ•°æ˜¯å¥‡æ•°");
 //
 //
 //	return 0;
 //}
 
 
-//Êä³ö1-100Ö®¼äµÄÆæÊı
+//è¾“å‡º1-100ä¹‹é—´çš„å¥‡æ•°
 int main()
 {
 	int a = 1;
