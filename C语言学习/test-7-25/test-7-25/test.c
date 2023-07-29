@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
- 打印1 - 100之间所有3的倍数
+打印1 - 100之间所有3的倍数
 #include<stdio.h>
 int main()
 {
@@ -17,7 +17,7 @@ int main()
 }
 
 将三个整数按照从大到小的顺序输出
-a,b,c       a,c,b  b,c,a  b,a,c  c,a,b,  c, b ,a
+a, b, c       a, c, b  b, c, a  b, a, c  c, a, b, c, b, a
 #include<stdio.h>
 int main()
 {
@@ -55,33 +55,33 @@ int main()
 /*#include <stdio.h>
 
 int main() {
-    int a, b, c, max, min;
-    scanf("%d %d %d", &a, &b, &c);
+	int a, b, c, max, min;
+	scanf("%d %d %d", &a, &b, &c);
 
-    if (a > b) {
-        max = a;
-        min = b;
-    }
-    else {
-        max = b;
-        min = a;
-    }
+	if (a > b) {
+		max = a;
+		min = b;
+	}
+	else {
+		max = b;
+		min = a;
+	}
 
-    if (c > max) {
-        max = c;
-    }
+	if (c > max) {
+		max = c;
+	}
 
-    if (min > c) {
-        min = c;
-    }
+	if (min > c) {
+		min = c;
+	}
 
-    b = a + b + c - max - min;
-    c = min;
-    a = max;
+	b = a + b + c - max - min;
+	c = min;
+	a = max;
 
-    printf("从大到小排序：%d %d %d\n", a, b, c);
+	printf("从大到小排序：%d %d %d\n", a, b, c);
 
-    return 0;
+	return 0;
 }*/
 
 
@@ -94,7 +94,7 @@ int main()
 {
 	int a, b, c;
 	a = 5;
-	c =++a;//a=a+1,c=a
+	c = ++a;//a=a+1,c=a
 	b = ++c, c++, ++a, a++;//b=c+1,c=c+1,a=a+1,a=a+1             前置++ --先++后使用
 	b += a++ + c;//,a=a+1,b=b+a+1+c                              后置++ --先使用后++
 	printf("a = %d b = %d c = %d\n:", a, b, c);//
