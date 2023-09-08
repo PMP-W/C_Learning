@@ -1,0 +1,237 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//#include<stdio.h>
+//void Swap(char* buf1, char* buf2, size_t width)
+//{
+//    int i = 0;
+//    for (i = 0; i < width; i++)
+//    {
+//        char tmp = *buf1;
+//        *buf1 = *buf2;
+//        *buf2 = tmp;
+//        buf1++;
+//        buf2++;
+//    }
+//}
+//
+//void bubble_sort(void* base, size_t sz, size_t width, int (*cmp)(const void*e1, const void*e2))
+//{
+//    //趟数
+//    int i = 0;
+//    for (i = 0; i < sz - 1; i++)
+//    {
+//        //一趟冒泡排序的过程
+//        int j = 0;
+//        for (j = 0; j < sz - 1 - i; j++)
+//        {
+//            //if (arr[j] > arr[j + 1])
+//            if(cmp((char*)base+j*width, (char*)base +(j+1)*width) > 0)
+//            {
+//                //交换
+//                Swap((char*)base + j * width, (char*)base + (j + 1) * width, width);
+//            }
+//        }
+//    }
+//}
+//
+//struct Stu
+//{
+//    char name[20];
+//    int age;
+//};
+//
+////int cmp_int(const void* e1, const void* e2)
+////{
+////    return *(int*)e1 - *(int*)e2;
+////}
+//
+////测试bubble_sort排序整型数据
+////void test1()
+////{
+////    int arr[] = { 3,1,5,2,4,8,7,6,9,0 };
+////    int sz = sizeof(arr) / sizeof(arr[0]);
+////    bubble_sort(arr, sz, sizeof(arr[0]), cmp_int);//冒泡排序
+////    print_arr(arr, sz);
+////}
+//
+////int cmp_stu_by_age(const void*e1, const void*e2)
+////{
+////    return ((struct Stu*)e1)->age - ((struct Stu*)e2)->age;
+////}
+//
+//int cmp_stu_by_name(const void* e1, const void* e2)
+//{
+//    return strcmp(((struct Stu*)e1)->name, ((struct Stu*)e2)->name);
+//}
+//
+//
+////测试bubble_sort排序结构体数据
+//void test2()
+//{
+//    struct Stu arr2[] = { {"zhansgan", 15}, {"lisi", 35},{"wangwu", 32} };
+//    int sz = sizeof(arr2) / sizeof(arr2[0]);
+//    //bubble_sort(arr2, sz, sizeof(arr2[0]), cmp_stu_by_age);
+//    bubble_sort(arr2, sz, sizeof(arr2[0]), cmp_stu_by_name);
+//}
+//
+//int main()
+//{   
+//    test2();
+//    return 0;
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//	int n = 10;//四个字节
+//	short s = 1;//两个字节
+//	int m = sizeof(s = n + 4);//sizeof内部不参与计算    int m=sizeof(short)
+//	printf("%d\n", m);
+//	printf("%d\n", s);
+//
+//
+//
+//	return 0;
+//}
+
+
+
+//数组名的理解：
+//数组名是数组首元素的地址
+//但是有2个例外：
+//1. sizeof(数组名)，数组名表示整个数组，计算的是整个数组的大小，单位是字节
+//2. &数组名，数组名表示整个数组，取出的是数组的地址
+//
+//int main()
+//{
+//	int a[] = { 1,2,3,4 };
+//
+//	printf("%zd\n", sizeof(a));//16
+//	printf("%zd\n", sizeof(a + 0));//数组名a并没有单独放在sizeof内部，也没有&,
+//	//所以a就是数组首元素的地址,是地址大小就是 4/8个字节
+//	//a+0 ===== &a[0]
+//
+//	printf("%zd\n", sizeof(*a));//a就是数组首元素的地址,a==&a[0]
+//	//*a 其实就是第一个元素，也就是a[0],大小就是4个字节
+//	
+//	printf("%zd\n", sizeof(a + 1));//a就是数组首元素的地址(&a[0] --int*), a+1--> &a[1]
+//	//a+1就是第二个元素的地址
+//
+//	printf("%zd\n", sizeof(a[1]));//计算第2个元素的大小，单位是字节 - 4
+//
+//	printf("%zd\n", sizeof(&a));//
+//	//&a - 取出的是数组的地址，但是数组的地址也是地址，是地址大小就是4 / 8 个字节
+//	//
+//	printf("%zd\n", sizeof(*&a));//16
+//	//printf("%zd\n", sizeof(a));//16
+//	//&a - int (*p)[4] = &a;
+//	//*p 访问一个数组的大小
+//	//p+1 跳过一个数组的大小
+//
+//	printf("%zd\n", sizeof(&a + 1));//&a+1是跳过整个数组后的地址，是地址大小就是4/8个字节
+//
+//	printf("%zd\n", sizeof(&a[0]));//首元素的地址，4/8
+//	printf("%zd\n", sizeof(&a[0] + 1));//第二个元素的地址
+//	//&a[1]
+//	//&a[0] - int*
+//	return 0;
+//}
+//
+
+
+
+//字符数组
+
+//int main()
+//{
+//	char arr[] = { 'a','b','c','d','e','f' };
+//	//[ a b c d e f ]
+//	printf("%d\n", sizeof(arr));//6
+//	printf("%d\n", sizeof(arr + 0));//arr是数组首元素的地址，arr+0 还是首元素的地址 是地址大小就是4/8个字节
+//	//char* 
+//
+//	printf("%d\n", sizeof(*arr));//arr是数组首元素的地址,*arr就是首元素,就占一个字符大小就是1个字节
+//	printf("%d\n", sizeof(arr[1]));//arr[1]就是数组的第二个元素，大小是1个字节
+//	printf("%d\n", sizeof(&arr));//&arr 是数组的地址，数组的地址也是地址，大小就是4/8
+//	printf("%d\n", sizeof(&arr + 1));//&arr+1 是跳过整个数组，指向f的后面 4/8
+//	printf("%d\n", sizeof(&arr[0] + 1));//&arr[0]是首元素的地址，&arr[0]+1就是第二个元素的地址 4/8
+//
+//	return 0;
+//}
+//void qsort(void* base, size_t num, size_t size,
+	//int (*compar)(const void*, const void*));
+//void Bubble_sort(int* arr, int sz)
+//{
+//	int i = 0;
+//	int tem = 0;
+//	for (i = 0; i < sz-1; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < sz-1-i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				tem = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tem;
+//			}
+//		}
+//	}
+//}
+//void qsort(void* base, size_t num, size_t size,
+	//int (*compar)(const void*, const void*));
+void swap(void* p1, void* p2, int size)
+{
+	int i = 0;
+	for (i = 0; i < size; i++)
+	{
+		char tem = *((char*)p1 + i);
+		*((char*)p1 + i) = *((char*)p2 + i);
+		*((char*)p2 + i) = tem;
+	}
+}
+void Bubble_sort(void*base,int sz,int size,int(*cmp)(const void*,const void*))
+{
+	int i = 0;
+	int tem = 0;
+	for (i = 0; i < sz - 1; i++)
+	{
+		int j = 0;
+		for (j = 0; j < sz - 1 - i; j++)
+		{
+			if (cmp((char*)base+j*size,(char*)base+(j+1)*size)>0)
+			{
+				swap((char*)base + j * size, (char*)base + (j + 1) * size,size);
+			}
+		}
+	}
+}
+
+int cmp_int(const void*p1,const void*p2)
+{
+	return (*(int *)p1-*(int *)p2);
+}
+void print(int* arr, int sz)
+{
+	int i = 0;
+
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
+
+
+//模拟实现qsort
+#include<stdio.h>
+int main()
+{
+	int arr[] = { 1,3,5,7,4,2,9,8 ,6};
+	int sz = sizeof(arr) / sizeof(*(arr+0));
+	print(arr, sz);
+	Bubble_sort(arr, sz,sizeof(int),cmp_int);
+	print(arr, sz);
+
+
+	return 0;
+}
