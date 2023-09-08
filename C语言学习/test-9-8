@@ -1,0 +1,106 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//strlen模拟实现
+// //	//字符串的结束标志是\0
+//	//strlen统计的是\0之前出现的字符的个数
+//递归
+//#include<stdio.h>
+//#include<assert.h>
+//size_t my_strlen(const char* str)
+//{
+//	assert(str);
+//	if (*str != '\0')
+//	{
+//		
+//		return 1+my_strlen(str + 1);
+//	}
+//	else
+//		return 0;
+//}
+
+//size_t my_strlen(const char* str)
+//{
+//	int count = 0;
+//	assert(str);
+//	while (*str != '\0')
+//	{
+//		count++;
+//		str++;//改变了指针，不是很好
+//	}
+//	return count;
+//}
+
+//指针-指针
+//size_t my_strlen(const char* str)
+//{
+//	char* ret=str;
+//	while (*ret != '\0')
+//	{
+//		ret++;
+//	}
+//	return ret - str;
+//
+//}
+//int main()
+//{
+//	char arr[10] = "hello";
+//	size_t len = my_strlen(arr);
+//	printf("%zd", len);
+//	return 0;
+//}
+
+
+//strcpy模拟实现
+// //注意事项：
+//1. 源字符串中必须包含\0，同时\0也会被拷贝到目标空间
+//2. 程序员自己要保证目标空间要足够大，能放得下拷贝来的数据
+//3. 保证目标空间必须可以修改
+//#include<stdio.h>
+//#include<assert.h>
+//char* my_strcpy(char* destination, const char* source)
+//{
+//	char* ret = destination;
+//	assert(destination);
+//	assert(source);
+//	while (*destination++ = *source++)
+//	{
+//		;
+//	}
+//	return ret;//传目标字符串首元素地址
+//}
+//int main()
+//{
+//	char arr1[20] = "hello";
+//	char arr2[20]={ 0 };
+//	printf("%s", my_strcpy(arr2, arr1));
+//	return 0;
+//}
+
+
+//strcat模拟实现
+//1. 目标空间中得有\0(从哪里开始追加)，源头字符串中得有\0（追加到什么时候结束）
+//2. 目标空间要足够大，目标要可以修改
+#include<stdio.h>
+#include<assert.h>
+char* my_strcat(char* destination, const char* source)
+{
+	char* ret = destination;
+	assert(destination);
+	assert(source);
+	while (*destination != '\0')
+	{
+		destination++;
+	}
+	while (*destination++ = *source++)
+	{
+		;
+	}
+
+	return ret;
+}
+int main()
+{
+	char arr1[20] = "hello ";
+	char arr2[20] = "world";
+	printf("%s", my_strcat(arr1, arr2));
+	return 0;
+}
