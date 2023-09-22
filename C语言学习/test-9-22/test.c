@@ -1,4 +1,5 @@
 //删除指定数字
+//1
 #include <stdio.h>
 int arr[10000];
 int arr2[10000];
@@ -29,6 +30,39 @@ int main() {
     }
     return 0;
 }
+//2
+#include <stdio.h>
+
+
+int main()
+{
+    int n = 0;
+    int arr[50] = {0};
+    int del = 0;
+    scanf("%d", &n);
+    int i = 0;
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    scanf("%d", &del);//要删除的元素
+    int j = 0;
+    for(i=0; i<n; i++)
+    {
+        if(arr[i] != del)
+        {
+            arr[j++] = arr[i];
+        }
+    }
+    
+    for(i=0; i<j; i++)
+    {
+        printf("%d ", arr[i]);    
+    }
+    return 0;
+}
+
+
 //变种水仙花数
 #include <stdio.h>
 int main() {
