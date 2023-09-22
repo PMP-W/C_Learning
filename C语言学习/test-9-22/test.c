@@ -29,3 +29,21 @@ int main() {
     }
     return 0;
 }
+//变种水仙花数
+#include <stdio.h>
+int main() {
+    for(int i=10000;i<100000;i++)
+    {
+        int sum=0;
+        int j=0;
+        for(j=10;j<=10000;j*=10)
+        {
+            sum+=(i/j)*(i%j);
+        }
+        if(sum==i)
+        {
+            printf("%d ",i);
+        }
+    }
+    return 0;
+}
