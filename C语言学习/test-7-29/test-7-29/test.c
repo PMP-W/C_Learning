@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-//²ÂÊı×ÖÓÎÏ·
+//çŒœæ•°å­—æ¸¸æˆ
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -13,60 +13,60 @@ void menu()
 void game()
 {
 	int guess = 0;
-//Éú³ÉËæ»úÊı
+//ç”Ÿæˆéšæœºæ•°
 	int r=rand() % 100 + 1;
-//²ÂÊı×Ö
-	//ÏŞÖÆ²ÂÊı×ÖµÄ´ÎÊı
+//çŒœæ•°å­—
+	//é™åˆ¶çŒœæ•°å­—çš„æ¬¡æ•°
 	int count = 5;
-	printf("Çë²ÂÊı×Ö£º\n");
+	printf("è¯·çŒœæ•°å­—ï¼š\n");
 	while (count) {
-		printf("Äã»¹ÓĞ%d´Î»ú»á\n", count);
+		printf("ä½ è¿˜æœ‰%dæ¬¡æœºä¼š\n", count);
 		scanf("%d", &guess);
 
 		if (guess > r)
 		{
-			printf("²Â´óÁË\n");
+			printf("çŒœå¤§äº†\n");
 		}
 		else if (guess < r)
 		{
-			printf("²ÂĞ¡ÁË\n");
+			printf("çŒœå°äº†\n");
 		}
 		else {
-			printf("¹§Ï²Äã£¬²Â¶ÔÁË\n");
+			printf("æ­å–œä½ ï¼ŒçŒœå¯¹äº†\n");
 			break;
 		}
 		count--;
 	}
 	if (count == 0)
 	{
-		printf("²ÂÊı×ÖÊ§°Ü£¬ÕıÈ·´ğ°¸ÊÇ:%d\n",r);
+		printf("çŒœæ•°å­—å¤±è´¥ï¼Œæ­£ç¡®ç­”æ¡ˆæ˜¯:%d\n",r);
 
 	}
-
+//
 
 }
 int main()
 {
 	int input = 0;
-	srand((unsigned int)time(NULL));//²»ĞèÒªÆµ·±µ÷ÓÃ
+	srand((unsigned int)time(NULL));//ä¸éœ€è¦é¢‘ç¹è°ƒç”¨
 
 	do {
 		
-		//´òÓ¡²Ëµ¥
+		//æ‰“å°èœå•
 		menu();
-		printf("ÇëÑ¡Ôñ£º");
+		printf("è¯·é€‰æ‹©ï¼š");
 		scanf("%d", &input);
 		switch (input)
 		{
 		case 1:
-			printf("¿ªÊ¼ÓÎÏ·\n");
+			printf("å¼€å§‹æ¸¸æˆ\n");
 			game();
 			break;
 		case 0:
-			printf("ÍË³öÓÎÏ·\n");
+			printf("é€€å‡ºæ¸¸æˆ\n");
 			break;
 		default:
-			printf("Ñ¡Ôñ´íÎó£¬ÖØĞÂÑ¡Ôñ\n");
+			printf("é€‰æ‹©é”™è¯¯ï¼Œé‡æ–°é€‰æ‹©\n");
 			break;
 
 		}
