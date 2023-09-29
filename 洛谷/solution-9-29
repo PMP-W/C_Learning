@@ -1,0 +1,132 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+//距离函数
+//可以用abs函数算绝对值
+//sqrt函数开方
+//#include<stdio.h>
+//#include<math.h>
+//float dis(float x1, float y1, float x2, float y2)
+//{
+//	float a, b,c;
+//	float m = x1 - x2;
+//	float n = y1 - y2;
+//
+//	a = pow(m, 2);
+//	b = pow(n, 2);
+//	float w = a + b;
+//	c = pow(w, 0.5);
+//	return c;
+//}
+//int main()
+//{
+//	float arr[6];
+//	//double x[6];
+//	//double y[6];
+//	int i = 0;
+//	for (i = 0; i < 5; i+=2)
+//	{
+//		scanf("%f %f", &arr[i], &arr[i + 1]);
+//	}
+//	float s1, s2, s3;
+//	s1 = dis(arr[0], arr[1], arr[2], arr[3]);
+//	s2 = dis(arr[2], arr[3], arr[4], arr[5]);
+//	s3 = dis(arr[4], arr[5], arr[0], arr[1]);
+//	float c = s1 + s2 + s3;
+//	printf("%.2f", c);
+//	return 0;
+//}
+
+
+//闰年展示
+//年份可被4整除但不能被100整除，或者能被400整除
+//#include<stdio.h>
+//int is_leapyear(int year)
+//{
+//	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+//	{
+//		return 1;
+//	}
+//	return 0;
+//}
+//int arr[1000];
+//int main()
+//{
+//	int start, end;
+//	int count = 0;
+//	int i = 0;
+//	int j = 0;
+//	scanf("%d %d", &start, &end);
+//	for (i = start; i <= end; i++)
+//	{
+//		if (is_leapyear(i) == 1)
+//		{
+//			count++;
+//			arr[j] = i;
+//			j++;
+//		}
+//	}
+//	printf("%d\n", count);
+//	for (i = 0; i < count; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//
+//	return 0;
+//}
+
+
+//计算阶乘
+//#include<stdio.h>
+//int fact(int n)
+//{
+//	if (n <= 2)
+//	{
+//		return n;
+//	}
+//	else
+//		return n * fact(n - 1);
+//}
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	int a = fact(num);
+//	printf("%d", a);
+//
+//	return 0;
+//}
+
+//质因数分解----原方法耗时长，以下代码进行了优化
+//#include<stdio.h>
+//#include<math.h>
+//int prime(int num)
+//{
+//	int i = 0;
+//	for (i = 2; i < sqrt(num); i++)
+//	{
+//		if (num % i == 0)
+//			return 0;
+//	}
+//	return 1;
+//}
+//int factor(int num)
+//{
+//	int i = 0;
+//	for (i = 2; i < sqrt(num); i++)
+//	{
+//		if (prime(i) == 1)//先找出质数
+//		{
+//			if (num % i == 0)//如果能整除，则另外一个较大的质因数就是它们的约数 
+//				return (num / i);
+//		}
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	int n = factor(num);
+//	printf("%d", n);
+//  return 0;
+//}
