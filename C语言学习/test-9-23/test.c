@@ -25,7 +25,7 @@ int main()
 		int b;
 	}u;
 	u.b = 1;
-	if (u.a == 1)
+	if (u.a == 1)//
 		printf("小端");
 	else
 		printf("大端");
