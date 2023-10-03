@@ -39,7 +39,7 @@
 //struct Node
 //{
 //	int data;
-//	struct book library_4;
+//	struct book library_4;//
 //	struct Node* next;
 //};
 ////结构体嵌套初始化
